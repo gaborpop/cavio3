@@ -1,0 +1,44 @@
+<template name="vinEdit">
+  <div class="container editWine">
+  {{#with vin}}
+    <form class="form-inline well">
+      <div class="row marginleft">
+      <div class="span10">
+      <input type="text" class="input-large" placeholder="Nom du vin" name="nom_vin" value="{{nomVin}}">
+          <select id="ListeElement1" name="region_vin"> 
+            <option value="valeur1">{{regionVin}}</option> 
+           <option value="valeur2">Bordeaux</option> 
+           <option value="valeur3">Bourgogne</option> 
+           <option value="valeur4">Alsace</option> 
+            <option value="valeur5">Côte du Rhone</option> 
+            <option value="valeur6">Vallée de la Loire</option> 
+            <option value="valeur7">Sud</option> 
+        </select> 
+        <select id="ListeElement" name="couleur_vin"> 
+           <option value="valeur1">{{couleurVin}}</option>
+           <option value="valeur2">Rouge</option> 
+           <option value="valeur3">Blanc</option> 
+           <option value="valeur4">Rosé</option> 
+        </select> 
+        <input type="text" class="input-medium" placeholder="Année" name="annee_vin" value="{{anneeVin}}">
+        <input type="text" id="tags" class="input-large" placeholder="Appellation" name="appellation_vin" value="{{appellationVin}}">
+        <select id="ListeElement" name="note_vin"> 
+          <option value="valeur1">Note : {{noteVin}}</option>
+          <option value="valeur2">Note : 1</option> 
+          <option value="valeur3">Note : 2</option> 
+          <option value="valeur4">Note : 3</option> 
+        </select> 
+        <input class="input-block-level long" name="commentaireVin" type="text" value="{{commentaireVin}}">
+        </div>  
+        <div class="span2">
+        <button type="submit" class="btn btn-green" value="Submit">Ok</button>
+      <a class="btn btn-red delete" href="#">Delete</a>
+          </div>  
+      </form> 
+  
+  
+  
+  
+  {{/with}}
+  </div>
+</template>  

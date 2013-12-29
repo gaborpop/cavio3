@@ -1,0 +1,41 @@
+<template name="maCaveTemplate">
+   <div class="container">
+     {{#if currentUser}}
+     
+     
+     
+     <div class = "containerMain2">
+         {{#if messageStatusIsTrue}}
+         <div class="alert alert-success">
+          <button type="button" class="close" data-dismiss="alert">&times;</button>
+          <h5>Votre message a été envoyé avec succès !</h5>
+          {{/if}}
+        </div>
+       
+       
+       <h4 class="macavetitle">Gestion de ma cave : </h4><br />
+      <div class="starter-template">
+        <div class="row">
+          <div class="span8">
+            {{> tableauVinTemplate  }}
+          
+          </div>
+          
+          <div class="span4">
+            {{> tableauVinTemplateRight  }}
+          
+          </div>
+        </div>
+       
+       
+       </div>
+       
+      
+     </div>
+    </div>
+  {{else}}
+  <div class="alert alert-error">
+    <p>You can not access this page : please log-in</p>
+  </div>
+  {{/if}}
+</template>

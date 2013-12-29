@@ -1,0 +1,99 @@
+<template name="tableauVinTemplate">
+<form class="form-inline formVin">
+  <div class="row">
+      <div class="span11">
+        <input type="text" class="input-medium" placeholder="Nom du vin" name="nom_vin">
+          <select id="ListeElement1" name="region_vin"> 
+           <option value="valeur1">Bordeaux</option> 
+           <option value="valeur2">Bourgogne</option> 
+           <option value="valeur3">Alsace</option> 
+            <option value="valeur3">Côte du Rhone</option> 
+            <option value="valeur3">Vallée de la Loire</option> 
+            <option value="valeur3">Sud</option> 
+        </select> 
+        <select id="ListeElement" name="couleur_vin"> 
+           <option value="valeur1">Rouge</option> 
+           <option value="valeur2">Blanc</option> 
+           <option value="valeur3">Rosé</option> 
+        </select> 
+        <input type="text" class="input-mini" placeholder="Année" name="annee_vin">
+  <input type="text" class="input-small appellation" placeholder="Appellation" name="appellation_vin" id="tags" />
+        <select id="ListeElement" name="note_vin"> 
+          <option value="valeur1">Note : 1</option> 
+          <option value="valeur2">Note : 2</option> 
+          <option value="valeur3">Note : 3</option> 
+        </select> 
+     <input class="input-block-level" name="commentaireVin" type="text" placeholder="votre commentaire....">   
+    </div> 
+        <div class="span1">
+        <button type="submit" class="btn btn-green btn-big" value="Submit">Créer un vin</button>
+    </div>
+  </div>
+  </form> 
+  
+  
+  <br />
+    <div class="pageVins">
+       {{#each vins}}
+         <div class="blocVin">
+            <div class="Grow">
+              {{#if couleurDuVin couleurVin }}
+                 <div class="G0red"></div>
+                 <div class="G1">
+                <img   src="redbottle.png" class="img-round imgVin vin" width="23">              
+              </div>
+              
+              {{else}}
+              <div class="G0white"></div>
+              <div class="G1">
+
+                <img   src="whitebottle.png" class="img-round imgVin vin" width="23">              
+              </div>
+              {{/if}}
+             
+              
+              
+              <div class="G2">
+                <div class="classNomVin">{{ nomVin  }} - {{ anneeVin  }}</div>
+                <div class="classAppellation">{{ appellationVin  }} - {{ regionVin  }}</div>
+                <div class="classAjoute">ajouté le {{ submittedText  }}</div> 
+              </div>
+               <div class="G3">
+                 <p class="votreNote">votre note : </p>
+                    {{#if isNoteOne }}
+                     <div class="classNoteVin">
+                        <img src='red_star.gif' />
+                     </div>
+                     
+                     {{else}}
+                        {{#if isNoteTwo }}
+                       <div class="classNoteVin">
+                          <img src='red_star.gif' /><img src='red_star.gif' />
+                       </div>
+                        {{else}}
+                       <div class="classNoteVin">
+                          <img src='red_star.gif' /><img src='red_star.gif' /><img src='red_star.gif' />
+                       </div>
+                      {{/if}}
+                    {{/if}}
+              </div>
+              <div class="G4">
+                <a href="{{ pathFor 'vinEdit' }}" class="btn btn-edit btnVin"><i class="icon-pencil icon-white"></i> editer</a>
+                <a href="" class="btn btn-red btnVin modifyStatus"><i class="icon-glass icon-white"></i> consommer</a>
+                <div class="commentVin"><em>"{{ commentaireVin  }}"</em></div>
+              </div>
+            
+            {{#if couleurDuVin couleurVin }}
+                 <div class="G5red"></div>
+                             
+              
+              
+              {{else}}
+              <div class="G5white"></div>
+           
+              {{/if}}
+            </div> 
+        </div>
+       {{/each}}<hr>
+  </div> 
+</template>       

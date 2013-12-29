@@ -1,6 +1,11 @@
 {
   "packages": {
     "iron-router": {},
-    "accounts-entry": {}
+    "accounts-entry": {},
+    "accounts-ui-bootstrap-dropdown": {},
+    "event-hooks": {},
+    "jquery-ui": {},
+    "jquery-ui-bootstrap": {},
+    "spin": {}
   }
 }

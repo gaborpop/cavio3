@@ -1,0 +1,32 @@
+<head>
+  <title>Cavio</title>
+</head>   
+<body>
+  <div class="container">
+<div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="/">Cav.io</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+              {{#if currentUser}}<li><a href="{{ pathFor 'maCaveTemplate' }}">Acceder à ma cave</a></li>{{/if}}
+              <li>{{loginButtons}}</li>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  <div id="main" class="row-fluid">
+    {{renderRouter}}
+ 
+    </div>
+  <br /><br />
+  {{> footerTemplate}}
+</body>
